@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://yasminnbistricky.github.io/raiz/sitemap.xml
+Sitemap: https://raiz.com.br/sitemap.xml

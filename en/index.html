@@ -5,19 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Brazil Trip Planning and Logistics · Lençóis Maranhenses · Raiz</title>
 <meta name="description" content="We plan trips to the Lençóis Maranhenses and other remote parts of Brazil, and handle the ground logistics: transfers, boats, guides, rooms and every conversation in Portuguese. Routes built around what you want to see and the days you have.">
-<link rel="canonical" href="https://yasminnbistricky.github.io/raiz/en/">
-<link rel="alternate" hreflang="en" href="https://yasminnbistricky.github.io/raiz/en/">
-<link rel="alternate" hreflang="pt" href="https://yasminnbistricky.github.io/raiz/pt/">
-<link rel="alternate" hreflang="fr" href="https://yasminnbistricky.github.io/raiz/fr/">
-<link rel="alternate" hreflang="es" href="https://yasminnbistricky.github.io/raiz/es/">
-<link rel="alternate" hreflang="x-default" href="https://yasminnbistricky.github.io/raiz/en/">
+<link rel="canonical" href="https://raiz.com.br/en/">
+<link rel="alternate" hreflang="en" href="https://raiz.com.br/en/">
+<link rel="alternate" hreflang="pt" href="https://raiz.com.br/pt/">
+<link rel="alternate" hreflang="fr" href="https://raiz.com.br/fr/">
+<link rel="alternate" hreflang="es" href="https://raiz.com.br/es/">
+<link rel="alternate" hreflang="x-default" href="https://raiz.com.br/en/">
 <link rel="icon" href="../brand/raiziconetransparenteterracota.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Raiz">
 <meta property="og:locale" content="en">
 <meta property="og:title" content="Brazil Trip Planning and Logistics · Lençóis Maranhenses · Raiz">
 <meta property="og:description" content="Go further into Brazil. We take care of the rest.">
-<meta property="og:image" content="https://yasminnbistricky.github.io/raiz/img/hero-dunas-caminhada.jpg">
+<meta property="og:image" content="https://raiz.com.br/img/hero-dunas-caminhada.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +25,7 @@
 <link rel="stylesheet" href="../style.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"TravelAgency","name":"Raiz",
-"description":"We plan trips to the Lençóis Maranhenses and other remote parts of Brazil, and handle the ground logistics: transfers, boats, guides, rooms and every conversation in Portuguese. Routes built around what you want to see and the days you have.","url":"https://yasminnbistricky.github.io/raiz/en/",
+"description":"We plan trips to the Lençóis Maranhenses and other remote parts of Brazil, and handle the ground logistics: transfers, boats, guides, rooms and every conversation in Portuguese. Routes built around what you want to see and the days you have.","url":"https://raiz.com.br/en/",
 "email":"yasminnbistricky@gmail.com","telephone":"+55 11 94707-1833",
 "areaServed":{"@type":"Country","name":"Brazil"},
 "availableLanguage":["English","Portuguese","French","Spanish"],
@@ -50,14 +50,30 @@
     </nav>
     <div class="tools">
       <div class="pill langpill" aria-label="Language">
-        <a href="../en/" hreflang="en" aria-current="true">EN</a>
-        <a href="../pt/" hreflang="pt">PT</a>
-        <a href="../fr/" hreflang="fr">FR</a>
-        <a href="../es/" hreflang="es">ES</a>
+        <a href="/en/" hreflang="en" aria-current="true">EN</a>
+        <a href="/pt/" hreflang="pt">PT</a>
+        <a href="/fr/" hreflang="fr">FR</a>
+        <a href="/es/" hreflang="es">ES</a>
       </div>
+      <!-- Abaixo de 900px o nav.links some. Sem este botao o visitante de celular
+           nao consegue chegar em nenhuma secao, so rolar. Palavra escrita em vez de
+           icone de tres riscos, que combina mais com a marca. -->
+      <button class="menubtn" id="menubtn" type="button" data-close="Close"
+              aria-expanded="false" aria-controls="menupanel">Menu</button>
     </div>
   </div>
 </header>
+
+<div class="menupanel" id="menupanel" hidden>
+  <nav aria-label="Home">
+    <a href="#problem">Why it's hard</a>
+    <a href="#how">How it works</a>
+    <a href="#places">Destinations</a>
+    <a href="#who">About us</a>
+    <a href="#faq">Questions</a>
+  </nav>
+  <a class="btn btn-pri menuwa" href="https://wa.me/5511947071833?text=Hi%21%20I%27d%20like%20to%20plan%20a%20trip%20to%20Brazil%20with%20Raiz." target="_blank" rel="noopener">Tell us where you want to go</a>
+</div>
 
 <main id="main">
 
@@ -125,7 +141,7 @@
       <div class="dest-txt reveal">
         <span class="eyebrow">main destination</span>
         <h2 class="mt">Lençóis Maranhenses</h2>
-        <p>A desert that fills with rainwater once a year and turns into thousands of clear lagoons between white dunes. One of the most extraordinary landscapes in the world, and one of the least straightforward to reach.</p>
+        <p>A desert that fills with rainwater once a year and turns into thousands of clear lagoons between white dunes. On the UNESCO World Heritage list since 2024, and still one of the least straightforward places in Brazil to reach.</p>
         <p>We handle all of it: which airport to fly into, the road and river journey from São Luís, the 4x4 over the sand, where you stay in Barreirinhas, Atins or Santo Amaro, and a guide who takes you to lagoons the standard tours drive past.</p>
         <p>How many days you actually need, when the water is at its highest, and what changes between four days and eight. It's all on the destination page.</p>
         <div class="tags"><span class="tag">Atins</span><span class="tag">Barreirinhas</span><span class="tag">Santo Amaro</span><span class="tag">Preguiças river</span><span class="tag">Mandacaru</span></div>
@@ -216,19 +232,15 @@
   </div>
 </section>
 
-<!-- SECAO DE DEPOIMENTOS OCULTA ATE OS TEXTOS REAIS CHEGAREM.
-     Para reativar: apague esta linha, a linha do fim do comentario,
-     a classe "draft" e o span.flag, e cole a frase do Alex e do Gabriel.
-
 <section class="band">
   <div class="wrap">
     <div class="head reveal">
       <span class="eyebrow">travellers we've taken</span>
       <h2>In their own words</h2>
     </div>
-    <!- - Nada aqui foi escrito por nos. Coloque a frase real, apague a classe draft
+    <!-- Nada aqui foi escrito por nos. Coloque a frase real, apague a classe draft
          e o span.flag. Depoimento inventado destroi a confianca que este site existe
-         para construir. - ->
+         para construir. -->
     <div class="draft reveal">
       <span class="flag">draft · waiting for the real quote</span>
       <div class="quotes">
@@ -238,8 +250,6 @@
     </div>
   </div>
 </section>
-
--->
 
 <section class="band band-duna" id="faq">
   <div class="wrap">
@@ -319,7 +329,11 @@
       <a href="https://wa.me/5511947071833?text=Hi%21%20I%27d%20like%20to%20plan%20a%20trip%20to%20Brazil%20with%20Raiz." target="_blank" rel="noopener">WhatsApp</a>
       <a href="mailto:yasminnbistricky@gmail.com">Email</a>
     </div>
-    <span class="fmark">Raiz · find the real Brazil</span>
+    <span class="fmark">Discovering the real Brasil</span>
+  </div>
+  <div class="wrap flegal">
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
   </div>
 </footer>
 

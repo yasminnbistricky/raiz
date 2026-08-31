@@ -15,6 +15,36 @@
   addEventListener("resize", onScroll);
   onScroll();
 
+  /* menu de celular. O painel usa o atributo hidden, entao sem JS ele nao aparece,
+     e o botao so existe abaixo de 900px. */
+  var mb = document.getElementById("menubtn");
+  var mp = document.getElementById("menupanel");
+  if (mb && mp) {
+    var abrir = mb.textContent.trim();
+    var fechar = mb.getAttribute("data-close") || abrir;
+
+    function setMenu(open) {
+      mp.hidden = !open;
+      mb.setAttribute("aria-expanded", open ? "true" : "false");
+      mb.textContent = open ? fechar : abrir;
+      document.body.classList.toggle("menuopen", open);
+    }
+    mb.addEventListener("click", function () {
+      setMenu(mp.hidden);
+    });
+    /* clicar num link fecha, senao o painel fica por cima da secao que ele acabou de abrir */
+    mp.addEventListener("click", function (e) {
+      if (e.target.closest("a")) setMenu(false);
+    });
+    addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !mp.hidden) { setMenu(false); mb.focus(); }
+    });
+    /* ao girar o aparelho ou voltar para desktop o painel nao pode ficar preso aberto */
+    addEventListener("resize", function () {
+      if (innerWidth > 900 && !mp.hidden) setMenu(false);
+    });
+  }
+
   /* leve profundidade no hero */
   var hbg = document.querySelector(".hero-bg");
   if (hbg && !matchMedia("(prefers-reduced-motion: reduce)").matches) {

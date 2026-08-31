@@ -46,7 +46,31 @@ nav.links a:hover{border-color:currentColor;opacity:1}
 .pill a{text-decoration:none;font-family:var(--sans);font-size:11.5px;font-weight:600;letter-spacing:.06em;color:var(--suave);padding:5px 9px;border-radius:999px;transition:.18s}
 .pill a:hover{color:var(--tinta)}
 .pill a[aria-current]{background:var(--rio);color:var(--areia)}
-.burger{display:none}
+
+/* ---------- menu de celular ---------- */
+/* Existe so abaixo de 900px, que e onde o nav.links some. */
+.menubtn{display:none;font-family:var(--sans);font-size:12px;font-weight:600;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--tinta);
+  background:none;border:1px solid var(--linha);border-radius:999px;
+  padding:8px 15px;cursor:pointer;line-height:1}
+.menubtn:hover{background:rgba(38,51,58,.05)}
+.menupanel{position:fixed;left:0;right:0;top:var(--hh);bottom:0;z-index:55;
+  background:var(--areia);padding:clamp(28px,7vw,48px) var(--pad) 40px;
+  display:flex;flex-direction:column;gap:6px;
+  overflow-y:auto;overscroll-behavior:contain}
+/* obrigatorio: display:flex acima vence o [hidden] do HTML, entao o painel
+   nunca sumiria sem esta linha. */
+.menupanel[hidden]{display:none}
+.menupanel nav{display:flex;flex-direction:column}
+.menupanel nav a{font-family:var(--serif);font-size:clamp(26px,7vw,34px);line-height:1.15;
+  letter-spacing:-.018em;color:var(--tinta);text-decoration:none;
+  padding:15px 0;border-bottom:1px solid var(--linha)}
+.menupanel nav a:first-child{border-top:1px solid var(--linha)}
+.menupanel .menuwa{margin-top:28px;align-self:flex-start}
+/* animacao curta de entrada, respeitando prefers-reduced-motion mais abaixo */
+.menupanel{animation:menuin .22s ease}
+@keyframes menuin{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+body.menuopen{overflow:hidden}
 
 /* ---------- botoes ---------- */
 .btn{display:inline-flex;align-items:center;gap:9px;padding:15px 26px;border-radius:999px;font-size:15.5px;font-weight:500;text-decoration:none;border:1px solid transparent;transition:transform .18s ease,background .18s ease,color .18s ease;cursor:pointer;font-family:var(--sans)}
@@ -193,7 +217,7 @@ form.signup input:focus{outline:2px solid var(--terracota);outline-offset:1px}
 
 footer{background:var(--noite);color:#93A5AC;padding:52px 0 44px;font-size:13.5px}
 footer .fbar{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
-footer img{height:26px;opacity:.85}
+footer img{height:26px;width:auto;opacity:.85}
 footer a{color:#B9C8CE;text-decoration:none}
 footer a:hover{color:var(--areia)}
 .fline{display:flex;gap:18px;flex-wrap:wrap}
@@ -212,6 +236,7 @@ footer a:hover{color:var(--areia)}
   .route{grid-template-columns:1fr;gap:6px}
   .gallery{aspect-ratio:1/1.15}
   nav.links{display:none}
+  .menubtn{display:inline-block}
   .people,.dest,.guide,.quotes,.tracks{grid-template-columns:1fr}
   .dest.flip .dest-txt{order:0}
   .steps{grid-template-columns:1fr;gap:26px}
@@ -231,6 +256,7 @@ footer a:hover{color:var(--areia)}
   *{transition:none!important;animation:none!important}
   html{scroll-behavior:auto}
   .reveal{opacity:1;transform:none}
+  .menupanel{animation:none}
 }
 
 /* ---------- paginas de destino ---------- */
@@ -321,3 +347,22 @@ footer .fline{display:flex;flex-direction:column;gap:9px}
   .steps4{grid-template-columns:1fr}
   footer .fline{flex-direction:row;flex-wrap:wrap;gap:16px}
 }
+
+
+/* ---------- paginas legais ---------- */
+.legal{padding-top:clamp(48px,7vw,86px)}
+.legal h1{max-width:16ch;margin-bottom:20px}
+.legal .lede{max-width:58ch;color:var(--suave)}
+.lupd{margin-top:22px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--suave)}
+.lbody{max-width:70ch;margin-top:clamp(36px,5vw,58px)}
+.lsec{padding-top:26px;margin-top:26px;border-top:1px solid var(--linha)}
+.lsec:first-child{border-top:none;margin-top:0;padding-top:0}
+.lsec h2{font-size:clamp(21px,2.6vw,27px);margin-bottom:12px}
+.lsec p{margin-top:12px;font-size:16.5px;line-height:1.66;color:#3B4A50}
+/* o .back padrao e claro, porque vive sobre foto. Aqui o fundo e areia. */
+.back.backdark{color:var(--suave);text-shadow:none;margin-bottom:20px}
+.back.backdark:hover{color:var(--tinta)}
+/* linha legal do rodape, discreta e separada dos links de navegacao */
+.flegal{display:flex;gap:18px;margin-top:26px;padding-top:18px;
+  border-top:1px solid rgba(239,230,214,.14);font-size:12.5px}
+.flegal a{color:#7E9099}
